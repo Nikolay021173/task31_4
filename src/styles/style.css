@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
+}
+
+#app-login-btn {
+  width: 160px;
+}
+
+.higen {
+  display: none;
+}
+
+.container{
+  max-width: 100%;
+  max-height: 55px !important;
+}
+
+.navbar {
+  max-height: 55px !important;
+}
+
+.app-container-header-footer {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(0, 103, 163, 1);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+}
+
+.app-title-canban-board {
+  font-size: 28px;
+  line-height: 32.81px;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
+  margin-right: 1462px;
+  
+}
+
+.app-text-state-task-kanban {
+  font-size: 18px;
+  /* line-height: 21.09px; */
+  color: rgba(255, 255, 255, 1);
+}
+
+.app-left-margin-task-finish {
+  margin-left: 36px;
+}
+
+.app-left-margin-task-kanban {
+  margin-left: 1231px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.app-container-main {
+ max-height: 803px;
+  background-color: rgba(0, 121, 191, 1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 19px;
+  padding-right: 19px;
+  padding-bottom: 32px;
+}
+
+.app-state-task {
+  width: 438px;
+  max-height: 763px;
+  border-radius: 10px;
+  font-size: 18px;
+  line-height: 21.09px;
+  text-align: left;
+  color: rgba(0, 0, 0, 1);
+  background-color: rgba(235, 236, 240, 1);
+  padding-left: 12px;
+  padding-top: 12px;
+  margin-top: 15px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.app-task-list {
+ /* list-style-type: none;
+  list-style-position: outside;
+  padding: 0;*/
+  display: flex;
+  flex-direction: column;
+  min-height: 100px;
+}
+
+.app-task {
+  margin-bottom: 15px;
+}
+
+.app-task-text {
+  width: 414px;
+  border-radius: 5px;   
+  font-size: 18px;
+  line-height: 21.09px;
+  text-align: left;
+  color: rgba(0, 0, 0, 1);
+  background-color: rgba(255, 255, 255, 1);
+  padding: 7px;
+}
+
+.app-tas-margin-top {
+  margin-top: 15px;
+}
+
+.app-button-add {
+  font-size: 18px;
+  line-height: 21.09px;
+  text-align: left;
+  color: rgba(94, 108, 132, 1);
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.app-submit {
+  width: 102px;
+  height: 29px;
+  border-radius: 5px;
+  background-color: rgba(0, 121, 191, 1);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.09px;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+}
+
+.container-fluid, .bg-blue, .show-and-close-menu {
+  background-color: rgba(0, 103, 163, 1);
+
+}
+
+.show-and-close-menu {
+  border-style: none;
+}
+
+.selected {
+  opacity: 0.6;
+}
+
+
+
+.flay {
+  width: 30px;
+  height: 30px;
+  background: red;
+}
+
+.down-list-menu {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 5px;
+  width: 134px;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 350px;
+}
+
+.list-menu {
+  list-style-type: none;
+  display: flex;
+ flex-direction: column;
+ padding-left: 7px;
+ padding-top: 8px;
+}
+
+.item-menu-text, 
+.item-menu-text-admin {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.41px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none;
+}
+
+.button-menu {
+  margin-left: 27px;
+  margin-bottom: 14px;
+  font-size: 18px;
+font-weight: 400;
+line-height: 16.41px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+border: none;
+color: red;
+background-color: rgba(255, 255, 255, 1);
+}
+
+.removeUser {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.41px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  border: none;
+  color: red;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.item-menu-admin {
+  width: 300px;
+}

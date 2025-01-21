@@ -1,0 +1,66 @@
+<!---<h1>Your tasks here</h1>-->
+<header class="header">
+<nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="app-container-header-footer">
+                <span class="app-title-canban-board">Awesome Kanban Board</span>
+                <div class="avatar">
+                    <img src="../image/user-avatar.svg" class="avatar" alt="Аватар пользователя">
+                </div> 
+                <button class="show-and-close-menu">
+                    <img src="../image/arrow-down.svg" class="close-img" alt="Показать меню">
+                    <img src="../image/arrow-up.svg" class="show-img higen" alt="Показать меню">
+                </button>
+                <div class="down-list-menu higen">
+                <ul class="list-menu">
+                    <li class="item-menu"><a href="#" class="item-menu-text">My account</a></li>
+                    <li class="item-menu"><a href="#" class="item-menu-text">My tasks</a></li>
+                        <li class="item-menu admin higen"><a href="#" class="item-menu-text">Users</a>
+                            <ol class="list-menu-admin higen">
+                            </ol>
+                        </li>
+                    <li class="item-menu"><a href="#" class="item-menu-text">Log out</a></li>
+                </ul>
+                <button class="button-menu higen">Add user</button>
+            </div>
+            </div>
+        </div>
+    </div>
+</nav>
+</header>
+<main class="main">
+    <div class="app-container-main">
+        <div class="app-state-task" id="backlog">Backlog
+         <div class="app-task-list backlog"></div>
+            <button class="app-button-add app-but-backlog">+Add card</button>
+            <button class="app-submit app-backlog-submit higen">Submit</button>
+        </div>
+        <div class="app-state-task" id="ready">Ready
+        <div class="app-task-list ready"></div> 
+        <select  class="app-select-task-backlog higen" multiple></select><br>             
+        </div>
+        <div class="app-state-task" id="progress">In Progress
+        <div class="app-task-list progr"></div>
+            <select  class="app-select-task-ready higen" multiple></select><br>      
+        </div>
+        <div class="app-state-task" id="finished">Finished
+        <div class="app-task-list finished"></div>
+            <select  class="app-select-task-progr higen" multiple></select><br>  
+        </div>
+    </div>
+    </main>
+    <footer class="footer">
+        <div class="app-container-header-footer">
+            <span class="app-text-state-task-kanban app-active"></span>
+            <span class="app-text-state-task-kanban app-left-margin-task-finish app-finish"></span>
+            <span class="app-text-state-task-kanban app-left-margin-task-kanban"></span>
+    
+    </div>
+    </footer>
+
