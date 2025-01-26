@@ -42,6 +42,7 @@ export const showMenuUser = function (main, header, footer, menuAdmin, addUser) 
         for (let elem of formControl) {
           elem.value = "";
         }
+        localStorage.removeItem('session');
         header.classList.add("higen");
         main.classList.add("higen");
         footer.classList.add("higen");

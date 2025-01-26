@@ -11,7 +11,7 @@ import { authUser } from "./services/auth";
 import { statesTask, createItemTask, submitItemTask, activeAndFinishedTasksNumb } from "./services/tasks";
 import { showMenuUser, addNewUser } from "./services/users";
 
- generateTestUser(User); // Создаются новые пользователи
+generateTestUser(User); // Создаются новые пользователи
 
 export const appState = new State();
 
@@ -27,49 +27,29 @@ colorCorrection();
 loginForm.addEventListener("submit", function (e) {
   e.preventDefault();
   authorization();
-
-  const menuAdmin = document.querySelector(".list-menu-admin");
-  const header = document.querySelector(".header");
-  const main = document.querySelector(".main");
-  const footer = document.querySelector(".footer");
-  
-  const addUser = document.querySelector(".button-menu");
-
-  main.classList.add("higen");
-  
-
-  showMenuUser(main, header, footer, menuAdmin, addUser);
-  activeAndFinishedTasksNumb(1);
-
-  const appButBacklogAdd = document.querySelector(".app-but-backlog");
-  const appBacklogSubmit = document.querySelector(".app-backlog-submit");
-
-  let listBacklog = document.querySelector(".backlog");
-
-    createItemTask(appBacklogSubmit, appButBacklogAdd, listBacklog, LoggedUser);
-
-    submitItemTask(appBacklogSubmit, appButBacklogAdd);
-
-  statesTask(LoggedUser);
-  
-  addNewUser(menuAdmin, addUser);
-  
 });
 
-const authorization = function() {
+const authorization = function () {
   const formData = new FormData(loginForm);
   let login = formData.get("login");
   let password = formData.get("password");
 
- /* const session = localStorage.getItem('session');
-  if(session) {
+  const session = localStorage.getItem('session');
+
+  if (session && session !== 'undefined' && session !== 'null') {
     login = session;
     password = JSON.parse(localStorage.getItem('users')).filter(el => el.login === login)[0]['password'];
-  } */
+  }
+
+  if((!session || session === 'undefined' || session === 'null') && (login === '' || password === '')) {
+    return
+  }
 
   let fieldHTMLContent = authUser(login, password)
     ? taskFieldTemplate
     : noAccessTemplate;
+
+  console.log(authUser(login, password))
 
   document.querySelector("#content").innerHTML = fieldHTMLContent;
 
@@ -81,9 +61,9 @@ const authorization = function() {
     LoggedUser = appState._currentUser.login;
     TasksData = getFromStorage(LoggedUser);
 
- //   localStorage.setItem('session', LoggedUser);
+    localStorage.setItem('session', LoggedUser);
 
-    if(!TasksData) {
+    if (!TasksData) {
       TasksData = [];
     }
 
@@ -119,12 +99,40 @@ const authorization = function() {
       const columnState = document.querySelector(tasksStates);
       columnState.appendChild(taskElemUser);
     }
-  } 
+  }
 
   const taskKanbanUser = document.querySelector(".app-left-margin-task-kanban");
   taskKanbanUser.textContent = `Kanban board by ${login}, 
         ${addZero(date.getDate())}.${addZero(date.getMonth() + 1)}.${addZero(
     date.getFullYear()
   )}`;
+
+
+  const menuAdmin = document.querySelector(".list-menu-admin");
+  const header = document.querySelector(".header");
+  const main = document.querySelector(".main");
+  const footer = document.querySelector(".footer");
+
+  const addUser = document.querySelector(".button-menu");
+
+  main.classList.add("higen");
+
+
+  showMenuUser(main, header, footer, menuAdmin, addUser);
+  activeAndFinishedTasksNumb(1);
+
+  const appButBacklogAdd = document.querySelector(".app-but-backlog");
+  const appBacklogSubmit = document.querySelector(".app-backlog-submit");
+
+  let listBacklog = document.querySelector(".backlog");
+
+  createItemTask(appBacklogSubmit, appButBacklogAdd, listBacklog, LoggedUser);
+
+  submitItemTask(appBacklogSubmit, appButBacklogAdd);
+
+  statesTask(LoggedUser);
+
+  addNewUser(menuAdmin, addUser);
 }
 
+authorization()
